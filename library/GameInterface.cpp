@@ -95,8 +95,8 @@ void GameInterface::start_game(int argc, char **argv)
         engine.UpdateGameState();
 
         std::cout << "The field after " << parser_command_line.get_iterations() << " iterations:\n";
-        save_to_file(game, parser_command_line.get_output_file());
         print_field(game.get_field());
+        save_to_file(game, parser_command_line.get_output_file());
         is_it_exit = 0;
     }
 }
