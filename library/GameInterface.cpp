@@ -2,7 +2,7 @@
 
 GameInterface::GameInterface(int argc, char **argv)
 {
-    start_game(argc, argv); // Call parse function to process command line arguments
+    start_game(argc, argv);
     is_it_exit = 1;
 }
 
@@ -45,7 +45,7 @@ void GameInterface::start_game(int argc, char **argv)
     }
     else if (mode == '2')
     {
-        const std::string filenames[] = {"game1.live", "game2.live", "game3.live", "game4.live", "game5.live"};
+        const std::string filenames[] = {"games/game1.live", "games/game2.live", "games/game3.live", "games/game4.live", "games/game5.live"};
 
         std::random_device rd;
         std::mt19937 gen(rd());
@@ -103,12 +103,12 @@ void GameInterface::start_game(int argc, char **argv)
 
 void GameInterface::print_field(const Field &field) const
 {
-    // Print the field
+
     for (const auto &row : field)
     {
         for (bool cell : row)
         {
-            // Display a visual representation of the cell (e.g., 'O' for alive, '.' for dead)
+
             std::cout << (cell ? 'O' : '.') << " ";
         }
         std::cout << '\n';
@@ -191,16 +191,12 @@ void GameInterface::save_to_file(const GameState &game, const std::string &outpu
         throw std::runtime_error("It couldn't open file for read: " + output_file);
     }
 
-    // Записываем информацию о версии игры
     file << "#Life " << game.get_game_version() << "\n";
 
-    // Записываем имя вселенной
     file << "#N " << game.get_universe_name() << "\n";
 
-    // Записываем размер поля
     file << "#Size " << game.get_size() << "\n";
 
-    // Записываем условия B/S
     file << "#R B";
     for (int condition : game.get_B_conditions())
     {
@@ -213,15 +209,14 @@ void GameInterface::save_to_file(const GameState &game, const std::string &outpu
     }
     file << "\n";
 
-    // Записываем координаты живых клеток
     const auto &field = game.get_field();
     for (int row = 0; row < field.size(); ++row)
     {
         for (int col = 0; col < field[row].size(); ++col)
         {
-            if (field[row][col]) // Если клетка живая
+            if (field[row][col])
             {
-                file << row + 1 << " " << col + 1 << "\n"; // Индексация в файле начинается с 1
+                file << row + 1 << " " << col + 1 << "\n";
             }
         }
     }
@@ -246,7 +241,9 @@ std::string GameInterface::manage_input()
     }
     else
     {
-        input.clear(); // Если вся строка состоит из пробелов, очищаем её
+        input.clear();
     }
     return input;
 }
+
+// g++ GameState.cpp GameEngine.cpp ParserCommandLine.cpp ParserCommands.cpp ParserFile.cpp GameInterface.cpp main.cpp -o main

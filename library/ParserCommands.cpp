@@ -2,7 +2,6 @@
 
 ParserCommands::ParserCommands() : command(0), iterations(0) {}
 
-// Проверка на формат .live
 bool ParserCommands::has_live_extension(const std::string &filename)
 {
     const std::string extension = ".live";
@@ -10,7 +9,6 @@ bool ParserCommands::has_live_extension(const std::string &filename)
            filename.compare(filename.size() - extension.size(), extension.size(), extension) == 0;
 }
 
-// Обработка команды dump
 void ParserCommands::parse_dump(const std::string &input)
 {
     std::istringstream stream(input);
@@ -32,7 +30,6 @@ void ParserCommands::parse_dump(const std::string &input)
     filename = filename_part;
 }
 
-// Обработка команды tick или t
 void ParserCommands::parse_tick(const std::string &input)
 {
     std::istringstream stream(input);
@@ -45,7 +42,7 @@ void ParserCommands::parse_tick(const std::string &input)
     }
 
     command = '2';
-    iterations = 1; // Значение по умолчанию
+    iterations = 1;
 
     if (!stream.eof())
     {
@@ -56,28 +53,25 @@ void ParserCommands::parse_tick(const std::string &input)
     }
 }
 
-// Обработка команды exit
 void ParserCommands::parse_exit(const std::string &)
 {
     command = '3';
 }
 
-// Обработка команды help
 void ParserCommands::parse_help(const std::string &)
 {
     command = '4';
 }
 
-// Общий парсинг команды
 void ParserCommands::parse_command(const std::string &input)
 {
     if (input.empty())
-    { // Пустая строка интерпретируется как tick 1
+    {
         parse_tick("tick 1");
     }
     else if (input.find("dump") == 0)
     {
-        // Проверяем, чтобы после "dump" было либо пробел и имя файла, либо ничего
+
         if (input.size() > 4 && input[4] != ' ')
         {
             throw InvalidCommandException("Unknown command!");
@@ -102,7 +96,6 @@ void ParserCommands::parse_command(const std::string &input)
     }
 }
 
-// Геттеры
 char ParserCommands::get_command() const
 {
     return command;
