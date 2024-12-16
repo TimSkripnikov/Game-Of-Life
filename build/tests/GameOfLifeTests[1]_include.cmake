@@ -1,5 +1,0 @@
-if(EXISTS "/home/artem/Documents/2 course/Object-Oriented Programming/ex2/build/tests/GameOfLifeTests[1]_tests.cmake")
-  include("/home/artem/Documents/2 course/Object-Oriented Programming/ex2/build/tests/GameOfLifeTests[1]_tests.cmake")
-else()
-  add_test(GameOfLifeTests_NOT_BUILT GameOfLifeTests_NOT_BUILT)
-endif()

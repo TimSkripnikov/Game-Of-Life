@@ -1,2 +1,0 @@
-/usr/bin/ar qc libGameOfLife.a CMakeFiles/GameOfLife.dir/GameEngine.cpp.o CMakeFiles/GameOfLife.dir/GameInterface.cpp.o CMakeFiles/GameOfLife.dir/GameState.cpp.o CMakeFiles/GameOfLife.dir/ParserCommandLine.cpp.o CMakeFiles/GameOfLife.dir/ParserCommands.cpp.o CMakeFiles/GameOfLife.dir/ParserFile.cpp.o
-/usr/bin/ranlib libGameOfLife.a
