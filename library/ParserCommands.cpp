@@ -43,13 +43,39 @@ void ParserCommands::parse_tick(const std::string &input)
 
     command = '2';
     iterations = 1;
+    if (!stream.eof())
+    {
+        std::string iterations_part;
+        stream >> iterations_part;
+
+        try
+        {
+            size_t pos;
+            iterations = std::stoi(iterations_part, &pos);
+
+            if (pos != iterations_part.length())
+            {
+                throw std::invalid_argument("Invalid characters after number.");
+            }
+
+            if (iterations <= 0)
+            {
+                throw std::invalid_argument("Iterations must be a positive integer.");
+            }
+        }
+        catch (const std::invalid_argument &)
+        {
+            throw InvalidCommandException("tick command requires a valid positive integer without extra characters.");
+        }
+        catch (const std::out_of_range &)
+        {
+            throw InvalidCommandException("tick command requires an integer within a valid range.");
+        }
+    }
 
     if (!stream.eof())
     {
-        if (!(stream >> iterations) || iterations <= 0)
-        {
-            throw InvalidCommandException("tick command requires a positive integer for iterations.");
-        }
+        throw InvalidCommandException("Invalid input: Unexpected characters after iterations.");
     }
 }
 

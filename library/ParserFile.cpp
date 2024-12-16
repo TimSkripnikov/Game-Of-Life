@@ -14,7 +14,7 @@ void ParserFile::parse(GameState &game_state)
     while (std::getline(file, line))
     {
         if (line.empty())
-            continue; // Пропустить пустые строки
+            continue;
 
         if (line.rfind("#Life", 0) == 0)
         {
