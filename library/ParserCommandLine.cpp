@@ -59,7 +59,6 @@ bool ParserCommandLine::parse_args_iterations(int argc, char **argv)
     {
         iterations_arg = argv[ind_iter + 1];
     }
-
     else if (std::string(argv[ind_iter]).substr(0, 13) == "--iterations=")
     {
         iterations_arg = std::string(argv[ind_iter]).substr(13);
@@ -67,6 +66,12 @@ bool ParserCommandLine::parse_args_iterations(int argc, char **argv)
     else
     {
         return true;
+    }
+
+    std::regex number_regex("^[0-9]+$");
+    if (!std::regex_match(iterations_arg, number_regex))
+    {
+        throw std::invalid_argument("Invalid iterations value: Must be a positive integer.");
     }
 
     try
@@ -85,7 +90,6 @@ bool ParserCommandLine::parse_args_iterations(int argc, char **argv)
 
     return false;
 }
-
 bool ParserCommandLine::parse_args_output(int argc, char **argv)
 {
     int ind_iter = 0;

@@ -11,6 +11,7 @@
 #include <string>
 #include <sstream>
 #include <random>
+#include <regex>
 
 using Field = std::vector<std::vector<bool> >; // Grid field representing the game state
 
@@ -415,7 +416,7 @@ private:
      * @param argv Array of command-line arguments.
      */
 
-        void start_game(int argc, char **argv);
+    void start_game(int argc, char **argv);
 
     int is_it_exit; // The flag for an exit
 

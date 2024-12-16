@@ -7,7 +7,7 @@ void ParserFile::parse(GameState &game_state)
     std::ifstream file(file_name);
     if (!file.is_open())
     {
-        throw std::runtime_error("Не удалось открыть файл");
+        throw std::runtime_error("It couldn't open the file!");
     }
 
     std::string line;
