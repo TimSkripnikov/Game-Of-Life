@@ -9,27 +9,27 @@ The Game of Life is a zero-player game where cells on a grid evolve based on a s
 This project was created as part of the NSU course *"Object Oriented Programming in C++"*.
 
 ### Basic Rules:
-1. **Birth:** A dead cell becomes alive if it has exactly 3 live neighbors.
-2. **Survival:** A live cell remains alive if it has 2 or 3 live neighbors.
-3. **Death:** In all other cases, cells die or remain dead.
+1. **Birth:** A dead cell becomes alive if it has exactly 3 live neighbors
+2. **Survival:** A live cell remains alive if it has 2 or 3 live neighbors
+3. **Death:** In all other cases, cells die or remain dead
 
 This implementation allows for customizable rules, enabling the creation of unique universes.
 
 ## 🛠️ Features
 
-- **Flexible Rules:** Customize the rules for cell birth (`B`) and survival (`S`).
-- **File Support:** Save and load game states using `.live` files.
-- **Simulation Control:** Step through iterations or simulate multiple generations in one command.
-- **Command-Line Interface:** Intuitive commands for interacting with the game.
-- **Dynamic Grid Size:** Support for any square grid size.
+- **Flexible Rules:** Customize the rules for cell birth (`B`) and survival (`S`)
+- **File Support:** Save and load game states using `.live` files
+- **Simulation Control:** Step through iterations or simulate multiple generations in one command
+- **Command-Line Interface:** Intuitive commands for interacting with the game
+- **Dynamic Grid Size:** Support for any square grid size
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- **C++17** or higher
-- A C++ compiler (e.g., GCC, Clang, or MSVC)
-- CMake (optional, for build automation)
+- **C++17** or higher;
+- A C++ compiler (e.g., GCC, Clang, or MSVC);
+- CMake (optional, for build automation).
 
 ### Cloning the Repository
 
@@ -55,7 +55,7 @@ cmake --build build
 - `-i x`: count of iterations;
 - `--iterations=x`: count of iterations;
 - `-o <file>`: save the state after x iterations to a `.live` file;
-- `--output=filename`: save the state after x iterations to a `.live` file;
+- `--output=filename`: save the state after x iterations to a `.live` file.
 
 Examples:
 ```bash
@@ -67,9 +67,9 @@ Examples:
 
 ### Interactive Commands in Game
 
-- `tick <n>`: Advance the simulation by n steps.
-- `dump <filename>`: Save the current state to a file.
-- `help`: Display a help menu.
+- `tick <n>`: Advance the simulation by n steps;
+- `dump <filename>`: Save the current state to a file;
+- `help`: Display a help menu;
 - `exit`: Quit the program.
 
 ### 📚 File Format
@@ -78,7 +78,7 @@ The `.live` file format includes:
 1. Version of the Game;
 2. Name of the Game;
 3. The grid size;
-4. Game rules (B and S conditions).
+4. Game rules (B and S conditions);
 5. Coordinates of live cells (x; y).
 
 ```bash
