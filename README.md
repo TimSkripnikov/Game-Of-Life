@@ -52,10 +52,10 @@ cmake --build build
 ```
 ### Command-Line Options
 
-- **-i x**: count of iterations;
-- **--iterations=x**: count of iterations;
-- **-o <file>**: save the state after x iterations to a **.live** file;
-- **--output=filename**: save the state after x iterations to a **.live** file;
+- `-i x`: count of iterations;
+- `--iterations=x`: count of iterations;
+- `-o <file>`: save the state after x iterations to a `.live` file;
+- `--output=filename`: save the state after x iterations to a `.live` file;
 
 Examples:
 ```bash
@@ -67,14 +67,14 @@ Examples:
 
 ### Interactive Commands in Game
 
-- **tick <n>**: Advance the simulation by n steps.
-- **dump <filename>**: Save the current state to a file.
-- **help**: Display a help menu.
-- **exit**: Quit the program.
+- `tick <n>`: Advance the simulation by n steps.
+- `dump <filename>`: Save the current state to a file.
+- `help`: Display a help menu.
+- `exit`: Quit the program.
 
 ### 📚 File Format
 
-The .live file format includes:
+The `.live` file format includes:
 1. Version of the Game;
 2. Name of the Game;
 3. The grid size;
