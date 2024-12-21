@@ -6,6 +6,8 @@
 
 The Game of Life is a zero-player game where cells on a grid evolve based on a set of simple rules. Despite its simplicity, it can generate complex and fascinating patterns.
 
+This project was created as part of the NSU course Object Oriented Programming in C++.
+
 ### Basic Rules:
 1. **Birth:** A dead cell becomes alive if it has exactly 3 live neighbors.
 2. **Survival:** A live cell remains alive if it has 2 or 3 live neighbors.
@@ -53,6 +55,45 @@ cmake --build build
 - **-i x**: count of iterations;
 - **--iterations=x**: count of iterations;
 - **-o <file>**: save the state after x iterations to a **.live** file;
-- **--output=filename**: save the state after x iterations to a **.live** file.s
+- **--output=filename**: save the state after x iterations to a **.live** file;
 
+Examples:
+```bash
+./build/game input_file.live -i 20 -o output_file.live
+./build/game input_file.live --iterations=20 -o output_file.live
+./build/game input_file.live
+./build/game
+```
 
+### Interactive Commands in Game
+
+- **tick <n>**: Advance the simulation by n steps.
+- **dump <filename>**: Save the current state to a file.
+- **help**: Display a help menu.
+- **exit**: Quit the program.
+
+### 📚 File Format
+
+The .live file format includes:
+1. Version of the Game;
+2. Name of the Game;
+3. The grid size;
+4. Game rules (B and S conditions).
+5. Coordinates of live cells (x; y).
+
+```bash
+#Life 1.06
+#N game1
+#Size 25
+#R B3/S23
+10 15
+9 16
+9 17
+10 17
+11 17
+10 20
+11 20
+9 21
+11 21
+11 22
+```
