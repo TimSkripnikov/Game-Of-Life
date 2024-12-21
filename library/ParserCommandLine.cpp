@@ -9,7 +9,7 @@ ParserCommandLine::ParserCommandLine(int argc, char **argv)
 bool ParserCommandLine::has_live_extension(const std::string &filename)
 {
     const std::string extension = ".live";
-    return filename.size() >= extension.size() &&
+    return filename.size() > extension.size() &&
            filename.compare(filename.size() - extension.size(), extension.size(), extension) == 0;
 }
 

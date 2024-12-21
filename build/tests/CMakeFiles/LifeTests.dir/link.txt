@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/LifeTests.dir/GameOfLifeTests.cpp.o -o LifeTests  ../lib/libgtest_main.a ../library/libGameOfLife.a ../lib/libgtest.a 
