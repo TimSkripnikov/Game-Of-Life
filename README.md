@@ -35,3 +35,9 @@ This implementation allows for customizable rules, enabling the creation of uniq
 ```bash
 git clone https://github.com/TimSkripnikov/Game-Of-Life.git
 cd Game-Of-Life
+
+### Building the Project
+```bash
+mkdir build
+cmake -S . -B build
+cmake --build build
