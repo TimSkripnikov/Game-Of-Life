@@ -6,6 +6,8 @@
 
 The Game of Life is a zero-player game where cells on a grid evolve based on a set of simple rules. Despite its simplicity, it can generate complex and fascinating patterns.
 
+This project serves as a practical exercise in algorithm design, grid-based state management, and simulation systems. It helps develop skills applicable to game development, visualization, and modeling of complex systems with simple rule sets.
+
 This project was created as part of the NSU course *"Object Oriented Programming in C++"*.
 
 ### Basic Rules:
